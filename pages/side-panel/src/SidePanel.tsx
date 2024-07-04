@@ -1,10 +1,11 @@
 import '@src/SidePanel.css';
 import { useStorageSuspense, withErrorBoundary, withSuspense } from '@chrome-extension-boilerplate/shared';
-import { exampleThemeStorage } from '@chrome-extension-boilerplate/storage';
+import { exampleThemeStorage, textSnippetStorage } from '@chrome-extension-boilerplate/storage';
 import { ComponentPropsWithoutRef } from 'react';
 
 const SidePanel = () => {
   const theme = useStorageSuspense(exampleThemeStorage);
+  const textSnippet = useStorageSuspense(textSnippetStorage);
 
   return (
     <div
@@ -14,18 +15,7 @@ const SidePanel = () => {
       }}>
       <header className="App-header" style={{ color: theme === 'light' ? '#222' : '#eee' }}>
         <img src={chrome.runtime.getURL('side-panel/logo.svg')} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>pages/side-panel/src/SidePanel.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ color: theme === 'light' ? '#0281dc' : undefined, marginBottom: '10px' }}>
-          Learn React
-        </a>
-        <h6>The color of this paragraph is defined using SASS.</h6>
+        <p>{textSnippet}</p>
         <ToggleButton>Toggle theme</ToggleButton>
       </header>
     </div>
