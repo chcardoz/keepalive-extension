@@ -19,11 +19,15 @@
   },
   "dependencies": {
     "@chrome-extension-boilerplate/shared": "workspace:*",
-    "@chrome-extension-boilerplate/storage": "workspace:*"
+    "@chrome-extension-boilerplate/storage": "workspace:*",
+    "@radix-ui/react-slot": "^1.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.4.0"
   },
   "devDependencies": {
     "@chrome-extension-boilerplate/tailwindcss-config": "workspace:*",
     "@chrome-extension-boilerplate/tsconfig": "workspace:*",
-    "@chrome-extension-boilerplate/hmr": "workspace:*"
+    "@chrome-extension-boilerplate/vite-config": "workspace:*"
   }
 }

@@ -3,12 +3,10 @@ import { resolve } from 'path';
 import libAssetsPlugin from '@laynezh/vite-plugin-lib-assets';
 import makeManifestPlugin from './utils/plugins/make-manifest-plugin';
 import { watchRebuildPlugin } from '@chrome-extension-boilerplate/hmr';
+import { isDev, isProduction } from '@chrome-extension-boilerplate/vite-config';
 
 const rootDir = resolve(__dirname);
 const libDir = resolve(rootDir, 'lib');
-
-const isDev = process.env.__DEV__ === 'true';
-const isProduction = !isDev;
 
 const outDir = resolve(rootDir, '..', 'dist');
 export default defineConfig({
@@ -35,6 +33,7 @@ export default defineConfig({
       fileName: 'background',
     },
     outDir,
+    emptyOutDir: false,
     sourcemap: isDev,
     minify: isProduction,
     reportCompressedSize: isProduction,
