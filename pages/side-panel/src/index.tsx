@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client';
 import '@src/index.css';
-import SidePanel from '@src/SidePanel';
+import SidePanel from '@src/components/SidePanel';
 
 function init() {
   const appContainer = document.querySelector('#app-container');
