@@ -27,7 +27,7 @@ const manifest = Object.assign(
     version: packageJson.version,
     description: 'Extension for remembering text snippets and generating questions',
     permissions: ['storage', 'contextMenus', 'cookies', 'tabs'].concat(sidePanelConfig.permissions),
-    host_permissions: ['<all_urls>'],
+    host_permissions: ['<all_urls>', 'localhost:3000'],
     background: {
       service_worker: 'background.iife.js',
       type: 'module',
