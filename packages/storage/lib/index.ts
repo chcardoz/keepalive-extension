@@ -1,12 +1,14 @@
-import { answerStorage } from './answerStorage';
-import { createStorage, StorageType, type BaseStorage, SessionAccessLevel } from './base';
-import { errorStringStorage } from './errorStringStorage';
-import { exampleThemeStorage } from './exampleThemeStorage';
-import { linkStorage } from './linkStorage';
-import { questionStorage } from './questionStorage';
-import { sectionIdStorage } from './sectionIdStorage';
-import { textSnippetStorage } from './textSnippetStorage';
-import { visitedSitesStringStorage } from './visitedSitesStorage';
+import { answerStorage } from './storage/answerStorage';
+import { createStorage, StorageType, type BaseStorage, SessionAccessLevel } from './storage/base';
+import { correctAnswerStorage } from './storage/correctAnswerStorage';
+import { errorStringStorage } from './storage/errorStringStorage';
+import { exampleThemeStorage } from './storage/exampleThemeStorage';
+import { linkStorage } from './storage/linkStorage';
+import { questionStorage } from './storage/questionStorage';
+import { sectionIdStorage } from './storage/sectionIdStorage';
+import { successStringStorage } from './storage/successStringStorage';
+import { textSnippetStorage } from './storage/textSnippetStorage';
+import { visitedSitesStringStorage } from './storage/visitedSitesStorage';
 
 export {
   exampleThemeStorage,
@@ -16,6 +18,8 @@ export {
   linkStorage,
   visitedSitesStringStorage,
   errorStringStorage,
+  successStringStorage,
+  correctAnswerStorage,
   sectionIdStorage,
   createStorage,
   StorageType,
