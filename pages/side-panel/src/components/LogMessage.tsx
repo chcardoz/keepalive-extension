@@ -1,10 +1,16 @@
-import { Check, X } from 'lucide-react';
+import { Check, MoveRight, X } from 'lucide-react';
 
 export const SuccessMessage = ({ message }: { message: string }) => (
   <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center w-full h-full p-10">
     <Check className="text-green-500 w-16 h-16" />
     <p className="font-bold text-lg mt-4">{message}</p>
     <p className="text-sm mt-2">Press Ctrl + B to close this panel</p>
+    <div className="mt-2 flex flex-row items-center">
+      <a href="http://localhost:3000/snippets" className="text-sm underline" target="_blank" rel="noreferrer">
+        Go to dashboard
+      </a>
+      <MoveRight className="w-4 h-4 inline-block ml-2" />
+    </div>
   </div>
 );
 
@@ -12,6 +18,14 @@ export const ErrorMessage = ({ message }: { message: string }) => (
   <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center justify-center w-full h-full p-10 bg-red-100">
     <X className="text-red-500 w-16 h-16" />
     <p className="font-bold text-lg mt-4">{message}</p>
+    {message.toLowerCase().includes('login') ? (
+      <div className="mt-2 flex flex-row items-center">
+        <a href="http://localhost:3000/login" className="text-sm underline" target="_blank" rel="noreferrer">
+          Go to login page
+        </a>
+        <MoveRight className="w-4 h-4 inline-block ml-2" />
+      </div>
+    ) : null}
     <p className="text-sm mt-2">Press Ctrl + B to close this panel</p>
   </div>
 );
